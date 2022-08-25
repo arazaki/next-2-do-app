@@ -13,10 +13,10 @@ const HeaderApp = () => {
       </TopHeader>
       <NavBar>
         <NavLink
-          to="/criterias"
+          to="/criteria"
           className={({ isActive }) => (isActive ? "selected" : "")}
         >
-          Criterias
+          Criteria
         </NavLink>
         {" | "}
         <NavLink

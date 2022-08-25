@@ -28,7 +28,7 @@ const EditCriteriaList = () => {
 
   return (
     <Content>
-      <h1>Edit Criterias</h1>
+      <h1>Edit Criteria</h1>
       <InputText
         ref={inputRef}
         type="text"

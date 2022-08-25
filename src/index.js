@@ -29,9 +29,9 @@ root.render(
               <Route path="signin" element={<SignIn />}></Route>
               <Route path="signup" element={<SignUp />}></Route>
               <Route path="todos" element={<TodoList />}></Route>
-              <Route path="criterias" element={<CriteriaList />} />
-              <Route path="criterias/reorder" element={<Reorder />} />
-              <Route path="criterias/edit" element={<EditCriteriaList />} />
+              <Route path="criteria" element={<CriteriaList />} />
+              <Route path="criteria/reorder" element={<Reorder />} />
+              <Route path="criteria/edit" element={<EditCriteriaList />} />
               <Route path="todos/add" element={<AddTodo />} />
               <Route path="todos/edit/:todoId" element={<EditTodo />} />
               <Route path="todos/:todoId" element={<ViewTodo />} />
