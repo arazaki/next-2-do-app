@@ -14,6 +14,8 @@ import EditTodo from "components/Todo/EditTodo";
 import ViewTodo from "components/Todo/ViewTodo";
 import Reorder from "components/Criteria/Reorder";
 import EditCriteriaList from "components/Criteria/EditCriteriaList";
+import SignUp from "components/Login/SignUp";
+import SignIn from "components/Login/SignIn";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,6 +26,8 @@ root.render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<App />}>
+              <Route path="signin" element={<SignIn />}></Route>
+              <Route path="signup" element={<SignUp />}></Route>
               <Route path="todos" element={<TodoList />}></Route>
               <Route path="criterias" element={<CriteriaList />} />
               <Route path="criterias/reorder" element={<Reorder />} />

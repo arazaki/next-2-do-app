@@ -1,7 +1,5 @@
 export const initialState = {
-  user: {
-    email: "",
-  },
+  user: "",
   criteriaList: [
     {
       id: null,
@@ -25,6 +23,11 @@ export const initialState = {
 
 export const reducer = (state, action) => {
   switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.payload,
+      };
     case "ADD_CRITERIA":
       return {
         ...state,

@@ -7,6 +7,10 @@ const GlobalContext = createContext();
 export const GlobalContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, mock);
 
+  const setUser = (user) => {
+    dispatch({ type: "SET_USER", payload: user });
+  };
+
   const addTodo = (todo) => {
     dispatch({ type: "ADD_TODO", payload: todo });
   };
@@ -46,6 +50,7 @@ export const GlobalContextProvider = (props) => {
   return (
     <GlobalContext.Provider
       value={{
+        setUser,
         addTodo,
         removeTodo,
         editTodo,

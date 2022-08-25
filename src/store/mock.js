@@ -1,7 +1,5 @@
 export const mock = {
-  user: {
-    email: "test@test.com",
-  },
+  user: null,
   criteriaList: [
     {
       id: "1",
