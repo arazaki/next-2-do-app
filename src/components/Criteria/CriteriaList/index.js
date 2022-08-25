@@ -29,7 +29,7 @@ const CriteriaList = () => {
       </ul>
       <MainButton onClick={onClickReorder}>Reorder!</MainButton>
       <FooterButtons>
-        <button onClick={onClickEditCriterias}>
+        <button type="button" onClick={onClickEditCriterias}>
           <Gear width="25px" height="25px" outline="#fff" color="transparent" />
         </button>
       </FooterButtons>

@@ -40,7 +40,10 @@ const EditCriteriaList = () => {
           return (
             <ListItem key={item.id}>
               <label>{item.title}</label>
-              <button onClick={() => onClickRemoveCriteria(item.id)}>
+              <button
+                type="button"
+                onClick={() => onClickRemoveCriteria(item.id)}
+              >
                 <Remove
                   width="25px"
                   height="25px"

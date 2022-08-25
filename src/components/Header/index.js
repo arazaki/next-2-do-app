@@ -9,7 +9,7 @@ const HeaderApp = () => {
     <Header>
       <TopHeader>
         <h1>Next2Do</h1>
-        <label>{user.email}</label>
+        <label>{user?.email}</label>
       </TopHeader>
       <NavBar>
         <NavLink

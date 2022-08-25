@@ -38,7 +38,11 @@ const Reorder = () => {
       <TagGroup>
         {baseList.map((item) => {
           return (
-            <button key={item.id} onClick={() => addItemToList(item)}>
+            <button
+              type="button"
+              key={item.id}
+              onClick={() => addItemToList(item)}
+            >
               {item.title}
             </button>
           );
@@ -54,7 +58,10 @@ const Reorder = () => {
                 <div>
                   <span>{newList[idx]?.title}</span>
                   {newList[idx] && (
-                    <button onClick={() => removeItemFromList(newList[idx])}>
+                    <button
+                      type="button"
+                      onClick={() => removeItemFromList(newList[idx])}
+                    >
                       <Remove
                         width="25px"
                         height="25px"

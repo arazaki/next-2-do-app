@@ -24,7 +24,7 @@ const TodoList = () => {
         </ul>
       </div>
       <FooterButtons>
-        <button onClick={openAddTodo}>
+        <button type="button" onClick={openAddTodo}>
           <Plus width="25px" height="25px" color="#fff" outline="#fff" />
         </button>
       </FooterButtons>

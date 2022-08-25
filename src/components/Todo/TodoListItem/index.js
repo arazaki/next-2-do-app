@@ -13,7 +13,13 @@ const TodoListItem = ({ item }) => {
     <ListItem>
       <label onClick={viewTodo}>{item.title}</label>
       <span>
-        {item.points ? item.points : <button onClick={onClickEdit}>Set</button>}
+        {item.points ? (
+          item.points
+        ) : (
+          <button type="button" onClick={onClickEdit}>
+            Set
+          </button>
+        )}
       </span>
     </ListItem>
   );

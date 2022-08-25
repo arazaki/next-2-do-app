@@ -56,8 +56,12 @@ const ViewTodo = () => {
 
       <MainButton onClick={onClickDone}>Done!</MainButton>
       <FooterButtons>
-        <button onClick={onClickEdit}>Edit</button>
-        <button onClick={onClickDelete}>Delete</button>
+        <button type="button" onClick={onClickEdit}>
+          Edit
+        </button>
+        <button type="button" onClick={onClickDelete}>
+          Delete
+        </button>
       </FooterButtons>
     </Content>
   );
