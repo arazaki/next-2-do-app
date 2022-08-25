@@ -12,7 +12,7 @@ const EditTodo = () => {
       return item.id.toString() === params.todoId.toString();
     });
     return foundTodo;
-  }, []);
+  });
 
   return (
     <>

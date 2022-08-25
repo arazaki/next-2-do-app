@@ -1,5 +1,5 @@
-import { createContext, useEffect, useReducer } from "react";
-import { initialState, reducer } from "../reducer";
+import { createContext, useReducer } from "react";
+import { reducer } from "../reducer";
 import { mock } from "../mock";
 
 const GlobalContext = createContext();

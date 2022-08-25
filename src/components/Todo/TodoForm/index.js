@@ -1,4 +1,4 @@
-import { useRef, useContext, useState, useEffect } from "react";
+import { useRef, useContext, useState } from "react";
 import GlobalContext from "store/context";
 import { useNavigate } from "react-router-dom";
 import { Content, ListItem } from "./styles";
