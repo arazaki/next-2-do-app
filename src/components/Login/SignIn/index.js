@@ -3,8 +3,10 @@ import { useState, useContext } from "react";
 import { Content, ButtonGroup, FormGroup } from "./styles";
 import MainButton from "components/MainButton";
 import GlobalContext from "store/context";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const { user } = useContext(GlobalContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +17,7 @@ const SignIn = () => {
       await FirebaseAuthService.loginUser(username, password);
       setUsername("");
       setPassword("");
+      navigate("/criteria");
     } catch (error) {
       alert(error.message);
     }

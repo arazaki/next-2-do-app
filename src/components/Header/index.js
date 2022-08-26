@@ -1,15 +1,30 @@
 import { useContext } from "react";
 import GlobalContext from "store/context";
 import { Header, NavBar, TopHeader } from "./styles";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import FirebaseAuthService from "../../firebase/FirebaseAuthService";
 
 const HeaderApp = () => {
   const { user } = useContext(GlobalContext);
+  const handleLogout = () => {
+    FirebaseAuthService.logoutUser();
+  };
   return (
     <Header>
       <TopHeader>
         <h1>Next2Do</h1>
-        <label>{user?.email}</label>
+        <div>
+          {user ? (
+            <>
+              <label>{user?.email}</label>
+              <button type="button" onClick={handleLogout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link to="/signin">Login</Link>
+          )}
+        </div>
       </TopHeader>
       <NavBar>
         <NavLink

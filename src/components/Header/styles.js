@@ -28,4 +28,20 @@ export const TopHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2rem 3rem 0 3rem;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    & > a,
+    button {
+      text-decoration: none;
+      color: white;
+      font-size: 1.6rem;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+    }
+  }
 `;
