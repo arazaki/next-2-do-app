@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import GlobalContext from "store/context";
+import { useFirebase } from "hooks";
 import TodoForm from "../TodoForm";
 
 const AddTodo = () => {
-  const { addTodo } = useContext(GlobalContext);
+  const { addTodo } = useFirebase();
 
   return (
     <>

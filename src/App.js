@@ -4,10 +4,12 @@ import { Outlet } from "react-router-dom";
 import { Container, Layout } from "./styles/globalStyles";
 import FirebaseAuthService from "./firebase/FirebaseAuthService";
 import GlobalContext from "store/context";
+import { useFirebase } from "hooks";
+import Loading from "components/Loading";
 
 function App() {
-  const { setUser, setTodos, setCriteria } = useContext(GlobalContext);
-
+  const { setUser } = useContext(GlobalContext);
+  const { setCriteria, setTodos, isLoading } = useFirebase();
   FirebaseAuthService.subscribeToAuthChanges(setUser);
   useEffect(() => {
     console.log("App loaded");
@@ -21,9 +23,7 @@ function App() {
     <div className="App">
       <Layout>
         <Header />
-        <Container>
-          <Outlet />
-        </Container>
+        <Container>{isLoading ? <Loading /> : <Outlet />}</Container>
       </Layout>
     </div>
   );

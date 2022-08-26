@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { Content, TagGroup } from "./styles";
 import MainButton from "components/MainButton";
 import { Remove } from "assets/svg";
+import { useFirebase } from "hooks";
 
 const Reorder = () => {
   const navigate = useNavigate();
-  const { criteriaList, reorderCriteriaList } = useContext(GlobalContext);
+  const { criteriaList } = useContext(GlobalContext);
+  const { reorderCriteriaList } = useFirebase();
   const [baseList, setBaseList] = useState(criteriaList);
   const [newList, setNewList] = useState([]);
 

@@ -2,9 +2,11 @@ import TodoForm from "../TodoForm";
 import { useContext, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import GlobalContext from "store/context";
+import { useFirebase } from "hooks";
 
 const EditTodo = () => {
-  const { editTodo, todoList } = useContext(GlobalContext);
+  const { todoList } = useContext(GlobalContext);
+  const { editTodo } = useFirebase();
   const params = useParams();
 
   const todo = useMemo(() => {

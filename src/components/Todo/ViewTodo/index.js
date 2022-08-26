@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import GlobalContext from "store/context";
 import { getTodo } from "selectors";
-import { useCalculatePoints } from "hooks";
+import { useCalculatePoints, useFirebase } from "hooks";
 import { Content, ListItem } from "./styles";
 import FooterButtons from "components/FooterButtons";
 import MainButton from "components/MainButton";
@@ -10,7 +10,8 @@ import MainButton from "components/MainButton";
 const ViewTodo = () => {
   const params = useParams();
   const navigate = useNavigate();
-  const { removeTodo, criteriaList, editTodo } = useContext(GlobalContext);
+  const { criteriaList } = useContext(GlobalContext);
+  const { removeTodo, editTodo } = useFirebase();
   const todos = useCalculatePoints();
 
   const todo = getTodo(todos, params.todoId);

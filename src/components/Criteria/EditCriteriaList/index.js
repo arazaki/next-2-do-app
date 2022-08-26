@@ -4,12 +4,12 @@ import { Content, ListItem } from "./styles";
 import { InputText } from "styles/globalStyles";
 import MainButton from "components/MainButton";
 import { Remove } from "assets/svg";
+import { useFirebase } from "hooks";
 
 const EditCriteriaList = () => {
   const inputRef = useRef("");
-  const { criteriaList, removeCriteria, addCriteria } =
-    useContext(GlobalContext);
-
+  const { criteriaList } = useContext(GlobalContext);
+  const { removeCriteria, addCriteria } = useFirebase();
   const onClickAddCriteria = () => {
     if (inputRef.current !== "") {
       const newCriteria = {
