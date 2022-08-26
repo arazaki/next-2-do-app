@@ -14,6 +14,7 @@ function App() {
     //init
     setTodos();
     setCriteria();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
