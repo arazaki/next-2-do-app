@@ -28,6 +28,11 @@ export const reducer = (state, action) => {
         ...state,
         user: action.payload,
       };
+    case "SET_CRITERIA":
+      return {
+        ...state,
+        criteriaList: action.payload,
+      };
     case "ADD_CRITERIA":
       return {
         ...state,
@@ -59,6 +64,11 @@ export const reducer = (state, action) => {
         criteriaList: state.criteriaList.filter((item) => {
           return item.id !== action.payload.id;
         }),
+      };
+    case "SET_TODOS":
+      return {
+        ...state,
+        todoList: action.payload,
       };
     case "ADD_TODO":
       return {

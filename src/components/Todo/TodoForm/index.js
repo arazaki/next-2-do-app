@@ -7,7 +7,7 @@ import MainButton from "components/MainButton";
 
 const TodoForm = ({ onSave, todo }) => {
   const inputRef = useRef();
-  const { criteriaList, todoList } = useContext(GlobalContext);
+  const { criteriaList } = useContext(GlobalContext);
   const navigate = useNavigate();
   const [rates, setRates] = useState(() => {
     let ratesObj = {};
@@ -25,13 +25,23 @@ const TodoForm = ({ onSave, todo }) => {
   });
 
   const onSaveHandler = () => {
-    const newTodo = {
-      //@todo retirar isso quando o id vier do banco
-      id: todo ? todo.id : todoList.length + 1,
-      title: inputRef.current.value,
-      scores: rates,
-      status: "active",
-    };
+    let newTodo = {};
+    if (todo) {
+      //update
+      newTodo = {
+        ...todo,
+        title: inputRef.current.value,
+        scores: rates,
+      };
+    } else {
+      //create
+      newTodo = {
+        title: inputRef.current.value,
+        scores: rates,
+        status: "active",
+      };
+    }
+
     onSave(newTodo);
     navigate("/todos");
   };

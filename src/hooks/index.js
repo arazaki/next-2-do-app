@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import GlobalContext from "store/context";
 
 export const useCalculatePoints = () => {

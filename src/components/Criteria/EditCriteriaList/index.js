@@ -13,7 +13,6 @@ const EditCriteriaList = () => {
   const onClickAddCriteria = () => {
     if (inputRef.current !== "") {
       const newCriteria = {
-        id: criteriaList.length + 1,
         title: inputRef.current.value,
         order: criteriaList.length + 1,
       };
@@ -28,7 +27,7 @@ const EditCriteriaList = () => {
 
   return (
     <Content>
-      <h1>Edit Criteria</h1>
+      <h1>Criteria Configuration</h1>
       <InputText
         ref={inputRef}
         type="text"
