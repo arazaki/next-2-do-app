@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Content = styled.div`
   height: 100%;
-  padding: 3rem 0;
+  padding: 0 5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: center;
-
   & > h1 {
+    margin-top: 6rem;
     margin-bottom: 3rem;
   }
 `;

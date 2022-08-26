@@ -26,8 +26,6 @@ root.render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<App />}>
-              <Route path="signin" element={<SignIn />}></Route>
-              <Route path="signup" element={<SignUp />}></Route>
               <Route path="todos" element={<TodoList />}></Route>
               <Route path="criteria" element={<CriteriaList />} />
               <Route path="criteria/reorder" element={<Reorder />} />
@@ -44,6 +42,8 @@ root.render(
                 }
               />
             </Route>
+            <Route path="/signin" element={<SignIn />}></Route>
+            <Route path="/signup" element={<SignUp />}></Route>
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

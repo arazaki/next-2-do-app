@@ -1,6 +1,12 @@
 import FirebaseAuthService from "../../../firebase/FirebaseAuthService";
 import { useState, useContext } from "react";
-import { Content, ButtonGroup, FormGroup } from "./styles";
+import {
+  Content,
+  ButtonGroup,
+  FormGroup,
+  ButtonLink,
+  ButtonGroupItem,
+} from "./styles";
 import MainButton from "components/MainButton";
 import GlobalContext from "store/context";
 import { useNavigate } from "react-router-dom";
@@ -49,6 +55,10 @@ const SignIn = () => {
     FirebaseAuthService.logoutUser();
   };
 
+  const handleSignUp = () => {
+    navigate("/signup");
+  };
+
   return (
     <Content>
       {user ? (
@@ -80,15 +90,21 @@ const SignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </label>
+            <ButtonLink type="button" onClick={handleSendResetPasswordEmail}>
+              Reset Password
+            </ButtonLink>
             <ButtonGroup>
-              <button type="button" onClick={handleSendResetPasswordEmail}>
-                Reset Password
-              </button>
-              <button type="submit">Login</button>
-              <button type="button" onClick={handleLoginWithGoogle}>
+              <ButtonGroupItem type="submit">Login</ButtonGroupItem>
+              <ButtonGroupItem type="button" onClick={handleLoginWithGoogle}>
                 Login With Google
-              </button>
-              <button type="button">Sign Up</button>
+              </ButtonGroupItem>
+              <ButtonGroupItem
+                onClick={handleSignUp}
+                color="blue"
+                type="button"
+              >
+                Sign Up
+              </ButtonGroupItem>
             </ButtonGroup>
           </FormGroup>
         </>

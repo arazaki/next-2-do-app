@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Content = styled.div`
   height: 100%;
-  padding: 3rem 0;
+  padding: 0 5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: center;
-
   & > h1 {
+    margin-top: 6rem;
     margin-bottom: 3rem;
   }
 `;
@@ -36,14 +36,26 @@ export const ButtonGroup = styled.div`
   justify-content: center;
   align-items: stretch;
   gap: 1rem;
-  & > button {
-    border: none;
-    padding: 1rem 5rem;
-    border-radius: 0.5rem;
-    background-color: #1aae9f;
-    color: #fff;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1.6rem;
-  }
+`;
+
+export const ButtonGroupItem = styled.button`
+  border: none;
+  padding: 1rem 5rem;
+  border-radius: 0.5rem;
+  background-color: ${(props) => (props.color ? props.color : "#1aae9f")};
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.6rem;
+`;
+
+export const ButtonLink = styled.button`
+  border: none;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
 `;
