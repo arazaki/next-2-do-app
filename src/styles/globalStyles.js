@@ -31,17 +31,6 @@ const GlobalStyle = createGlobalStyle`
 
 export default GlobalStyle;
 
-export const Layout = styled.div`
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 10rem auto;
-`;
-
-export const Container = styled.div`
-  padding: 2rem 5rem;
-`;
-
 export const InputText = styled.input`
   font-size: 1.6rem;
   margin-bottom: 1rem;

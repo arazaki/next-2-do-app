@@ -8,13 +8,16 @@ import { useFirebase } from "hooks";
 
 const EditCriteriaList = () => {
   const inputRef = useRef("");
-  const { criteriaList } = useContext(GlobalContext);
+  const { criteriaList, user } = useContext(GlobalContext);
   const { removeCriteria, addCriteria } = useFirebase();
   const onClickAddCriteria = () => {
     if (inputRef.current !== "") {
       const newCriteria = {
         title: inputRef.current.value,
         order: criteriaList.length + 1,
+        roles: {
+          [user.uid]: ["owner"],
+        },
       };
       addCriteria(newCriteria);
     }

@@ -7,7 +7,7 @@ import MainButton from "components/MainButton";
 
 const TodoForm = ({ onSave, todo }) => {
   const inputRef = useRef();
-  const { criteriaList } = useContext(GlobalContext);
+  const { criteriaList, user } = useContext(GlobalContext);
   const navigate = useNavigate();
   const [rates, setRates] = useState(() => {
     let ratesObj = {};
@@ -39,6 +39,9 @@ const TodoForm = ({ onSave, todo }) => {
         title: inputRef.current.value,
         scores: rates,
         status: "active",
+        roles: {
+          [user.uid]: ["owner"],
+        },
       };
     }
 

@@ -1,5 +1,5 @@
 import FirebaseAuthService from "../../../firebase/FirebaseAuthService";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import {
   Content,
   ButtonGroup,
@@ -58,6 +58,12 @@ const SignIn = () => {
   const handleSignUp = () => {
     navigate("/signup");
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/criteria");
+    }
+  }, [user, navigate]);
 
   return (
     <Content>

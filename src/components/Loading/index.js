@@ -1,8 +1,10 @@
+import { Loader, Container } from "./styles";
+
 const Loading = () => {
   return (
-    <>
-      <h1>Loading...</h1>
-    </>
+    <Container>
+      <Loader />
+    </Container>
   );
 };
 
